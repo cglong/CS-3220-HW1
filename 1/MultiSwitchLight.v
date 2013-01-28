@@ -12,6 +12,7 @@ module MultiSwitchLight(LEDG, KEY);
 	always @(posedge flip1) state1 <= !state1;
 	always @(posedge flip2) state2 <= !state2;
 	always @(posedge flip3) state3 <= !state3;
+	
 	assign LEDG[0] = state0 ^ state1 ^ state2 ^ state3;
 	assign LEDG[1] = state0 ^ state1 ^ state2 ^ state3;
 endmodule
