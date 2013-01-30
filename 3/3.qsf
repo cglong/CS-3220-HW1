@@ -47,7 +47,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name VERILOG_FILE MemoryValueReader.v
-set_global_assignment -name VERILOG_FILE SevenSegments.v
 set_global_assignment -name VERILOG_FILE SevenSeg.v
 set_global_assignment -name MIF_FILE 3.mif
 set_location_assignment PIN_A13 -to GPIO_0[0]
