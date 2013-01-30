@@ -13,11 +13,16 @@ module MemoryValueReader(HEX0, HEX1, HEX2, HEX3, KEY, CLOCK_50);
 	
 	always @(posedge CLOCK_50) begin
 		Cnt <= Cnt + 32'd1;
+		
 		if (Cnt == 32'd25000000) begin
 			mdr <= mem[mar]; // Read memory
-			mar <= mar + 10'd1; // And increment mar register
 			Cnt <= 32'd0;
+			if (mar == 10'd16)
+				mar <= 10'd0;
+			else
+				mar <= mar + 10'd1; // Increment value
 		end
+		
 		if (!KEY[0])
 			mar <= 10'd0; // Reset value
 	end
