@@ -1,7 +1,8 @@
-module MemoryValueReader(HEX0, HEX1, HEX2, HEX3, CLOCK_50);
+module MemoryValueReader(KEY, HEX0, HEX1, HEX2, HEX3, CLOCK_50);
 	(* ram_init_file = "3.mif" *)
-	output [7:0] HEX0, HEX1, HEX2, HEX3; 	
 	input CLOCK_50;
+	input [0:0] KEY;
+	output [6:0] HEX0, HEX1, HEX2, HEX3;	
 	reg [15:0] mem[0:1023]; // 1024-entry, 16-bit memory
 	reg [15:0] mdr; // 16-bit MDR register
 	reg [9:0] mar; // 10-bit MAR register
@@ -23,5 +24,6 @@ module MemoryValueReader(HEX0, HEX1, HEX2, HEX3, CLOCK_50);
 	SevenSeg sseg1(.IN(mdr[ 7: 4]),.OUT(HEX1));
 	SevenSeg sseg2(.IN(mdr[11: 8]),.OUT(HEX2));
 	SevenSeg sseg3(.IN(mdr[15:12]),.OUT(HEX3));
+	
 endmodule
 	
