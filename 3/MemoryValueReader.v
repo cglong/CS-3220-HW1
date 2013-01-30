@@ -18,10 +18,9 @@ module MemoryValueReader(HEX0, HEX1, HEX2, HEX3, KEY, CLOCK_50);
 			mar <= mar + 10'd1; // And increment mar register
 			Cnt <= 32'd0;
 		end
+		if (!KEY[0])
+			mar <= 10'd0; // Reset value
 	end
-	
-	always @(posedge !KEY[0])
-		mar <= 10'd0; // Reset value
 	
 	// Do something with MDR, e.g. display it:
 	SevenSeg sseg0(.IN(mdr[ 3: 0]),.OUT(HEX0));
