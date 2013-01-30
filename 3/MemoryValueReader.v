@@ -1,6 +1,6 @@
 module MemoryValueReader(HEX0, HEX1, HEX2, HEX3, KEY, CLOCK_50);
 	(* ram_init_file = "3.mif" *)
-	output [7:0] HEX0, HEX1, HEX2, HEX3;
+	output [6:0] HEX0, HEX1, HEX2, HEX3;
 	input [0:0] KEY;
 	input CLOCK_50;
 	
